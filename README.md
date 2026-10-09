@@ -15,8 +15,14 @@ streamlit run app.py
 
 Requires `curvecirclenet_sickle_best.pth` next to `app.py` (included in repo).
 
-## Deploy notes (CPU servers)
+## Deploy to Streamlit Community Cloud (free)
 
+1. Sign in at share.streamlit.io with GitHub.
+2. New app → this repo → branch `main` → main file `app.py` → Deploy.
+3. The free tier covers one private app; the app sleeps after 12 idle hours
+   and storage is ephemeral (export CSVs from Records after real use).
+
+## Deploy notes (CPU servers)
 `requirements.txt` installs the default PyTorch wheel (CUDA bundled, ~2 GB).
 On CPU-only hosts (Streamlit Cloud, Hugging Face Spaces, Render) use the CPU
 wheel instead — replace the `torch` line with:
